@@ -2,6 +2,9 @@ import Home from "./components/Home/Home"
 import Navbar from "./components/navbar/Navbar"
 import About from "./components/About/About"
 import React from "react"
+import Experience from "./components/Experience/Experience"
+import Footer from "./components/Footer/footer"
+import Projects from "./components/Projects/Projects"
 
 function App() { 
   return (
@@ -9,6 +12,9 @@ function App() {
       <Navbar />
       <Home />
       <About />
+      <Experience />
+      <Projects />
+      <Footer />
     </div>
   )
 }
