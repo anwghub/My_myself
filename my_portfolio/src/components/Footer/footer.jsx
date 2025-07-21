@@ -9,8 +9,8 @@ const Footer = () => {
       id="Footer"
       className="flex flex-col md:flex-row justify-around bg-[#465697] text-white px-10 py-32 items-center gap-10"
     >
-      <div>
-        <h1 className="text-2xl md:text-5xl font-bold mb-4">Contact</h1>
+      <div className="text-left">
+        <h1 className="text-2xl md:text-4xl font-bold mb-4 ">Contact</h1>
         <h3 className="text-sm md:text-2xl font-normal">
           Feel Free To Reach Out!
         </h3>

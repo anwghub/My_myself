@@ -1,62 +1,65 @@
 import React from "react";
 import AboutImg from "../../assets/7358653-removebg-preview.png";
 import { IoArrowForward } from "react-icons/io5";
+
 const About = () => {
   return (
     <div
       id="About"
-      className="text-white md:flex overflow-hidden items-center md:flex-wrap md:justify-center bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12"
+      className="bg-black bg-opacity-30 text-white px-6 py-16 md:py-24 mx-0 md:mx-20 rounded-lg shadow-xl"
     >
-      <div>
-        <h2 className="text-2xl md:text-4xl font-bold">About</h2>
-        <div className="md:flex flex-wrap flex-col md:flex-row items-center">
-          <img className="md:h-80" src={AboutImg} alt="About img" />
+      <h2 className="text-2xl md:text-4xl font-bold mb-10 text-left md:text-center">About Me</h2>
 
-          <ul>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        {/* Image */}
+        <div className="flex justify-center w-full md:w-1/2">
+          <img
+            src={AboutImg}
+            alt="About"
+            className="h-80 object-contain animate-float hover:animate-bounce"
+          />
+        </div>
 
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Frontend developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores explicabo deserunt asperiores quasi, vitae blanditiis
-                  perferendis quos consectetur ea harum! Libero aut qui
-                  similique recusandae provident consectetur sed itaque alias
-                  sint ipsa?
-                </p>
-              </span>
+        {/* Content */}
+        <div className="w-full md:w-1/2 space-y-8">
+          {/* Education */}
+          <div className="flex items-start gap-3">
+            <IoArrowForward size={24} className="text-[#7da0fa] min-w-[24px] mt-1" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">
+                Final Year B.Tech Undergrad (Computer Science & Engineering)
+              </h3>
+              <p className="text-sm md:text-md text-gray-300 pt-2">
+                Govt. College of Engineering & Ceramic Technology, Kolkata <br />
+                <strong>CGPA:</strong> 9.59
+              </p>
             </div>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
+          </div>
 
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Database developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores
-                </p>
-              </span>
+          {/* School */}
+          <div className="flex items-start gap-3">
+            <IoArrowForward size={24} className="text-[#7da0fa] min-w-[24px] mt-1" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">10th & 12th Standard</h3>
+              <p className="text-sm md:text-md text-gray-300 pt-2">
+                Shyamnagar Balika Vidyalaya <br />
+                <strong>10th:</strong> 92.3% | <strong>12th:</strong> 90.6%
+              </p>
             </div>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
+          </div>
 
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Backend developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores explicabo deserunt asperiores quasi, vitae blanditiis
-                  perferendis
-                </p>
-              </span>
+          {/* Skills */}
+          <div className="flex items-start gap-3">
+            <IoArrowForward size={24} className="text-[#7da0fa] min-w-[24px] mt-1" />
+            <div>
+              <h3 className="text-xl md:text-2xl font-semibold">
+                MERN Stack & Backend Developer
+              </h3>
+              <p className="text-sm md:text-md text-gray-300 pt-2">
+                I develop backend and full-stack applications using MongoDB, Express, React, and Node.js with a focus on scalable and efficient solutions.
+              </p>
             </div>
-          </ul>
+          </div>
         </div>
       </div>
     </div>

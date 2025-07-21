@@ -1,34 +1,49 @@
 import { RiCloseLine, RiMenu2Line } from '@remixicon/react';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Navbar = () => {
-    const [menu, openMenu] = useState(false);
-    const [showMenu, setShowMenu] = useState(true);
-    return (
-        <nav className='flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20 py-38'>
-            <span className='text-4xl font-bold tracking-wide mt-5'>Portfolio</span>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-            <ul className={`${menu ? "flex" : "hidden"} md:flex gap-6 mx-24 py-2 mt-4 font-semibold md:mt-5 px-2 rounded-xl bg-opacity-30 md:border-none`}>
-                <a href="#About"><li className='text-xl transition-all duration-300 p-1 md:p-0'>About</li></a>
-                <a href="#Experience"><li className='text-xl transition-all duration-300 p-1 md:p-0'>Experience</li></a>
-                <a href="#Projects"><li className='text-xl transition-all duration-300 p-1 md:p-0'>Projects</li></a>
-                <a href="#Footer"><li className='text-xl transition-all duration-300 p-1 md:p-0'>Contact</li></a>
+  const handleMenuToggle = () => {
+    setMenuOpen(prev => !prev);
+  };
 
-            </ul>
-            {showMenu ? (
-                <RiMenu2Line size={30} className='md:hidden right-10 top-6 transition-all duration-300' 
-                onClick={() => {
-                    openMenu(true);
-                    setShowMenu(false)
-                }} />
-            ) : (<RiCloseLine size={30} className='md:hidden right-10 top-6 transition-all duration-300' 
-            onClick={() => {
-                    openMenu(false);
-                    setShowMenu(true)
-                }} />)}
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Close menu on item click
+  };
 
-        </nav>
-    )
-}
+  return (
+    <nav className='relative z-50 flex justify-between items-center text-white px-6 py-4 md:px-20 bg-transparent mt-10'>
+      <span className='text-5xl font-bold tracking-wide'>Portfolio</span>
 
-export default Navbar
+      {/* Desktop Menu */}
+      <ul className='hidden md:flex gap-8 font-semibold text-xl'>
+        <a href="#About"><li className='hover:text-[#7da0fa] duration-200'>About</li></a>
+        <a href="#Experience"><li className='hover:text-[#7da0fa] duration-200'>Experience</li></a>
+        <a href="#Projects"><li className='hover:text-[#7da0fa] duration-200'>Projects</li></a>
+        <a href="#Footer"><li className='hover:text-[#7da0fa] duration-200'>Contact</li></a>
+      </ul>
+
+      {/* Mobile Menu Toggle */}
+      <div className='md:hidden'>
+        {menuOpen ? (
+          <RiCloseLine size={30} onClick={handleMenuToggle} />
+        ) : (
+          <RiMenu2Line size={30} onClick={handleMenuToggle} />
+        )}
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <ul className='absolute top-full left-0 w-full bg-black bg-opacity-90 text-white p-6 flex flex-col gap-4 font-semibold md:hidden transition-all duration-300 z-40'>
+          <a href="#About" onClick={handleLinkClick}><li>About</li></a>
+          <a href="#Experience" onClick={handleLinkClick}><li>Experience</li></a>
+          <a href="#Projects" onClick={handleLinkClick}><li>Projects</li></a>
+          <a href="#Footer" onClick={handleLinkClick}><li>Contact</li></a>
+        </ul>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;

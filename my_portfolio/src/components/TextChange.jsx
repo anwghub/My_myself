@@ -1,33 +1,45 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
 const TextChange = () => {
-  const texts = ["Hi, I'm Anwesa", "Hi, I'm Anwesa", "Hi, I'm Anwesa"];
-  const [currenText, setCurrentText] = useState("");
-  const [endValue, setendValue] = useState(true);
-  const [isForward, setIsForward] = useState(true);
-  const [index, setIndex] = useState(0);
+  const texts = [
+    "Hi, I'm Anwesa Ghosh",
+    "A MERN Stack Developer ...",
+    "A Backend Developer ..."
+  ];
+
+  const [currentText, setCurrentText] = useState("");
+  const [charIndex, setCharIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+  const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentText(texts[index].substring(0, endValue));
-      if (isForward) {
-        setendValue((prev) => prev + 1);
+    const currentSentence = texts[textIndex];
+
+    const timeout = setTimeout(() => {
+      if (isTyping) {
+        if (charIndex < currentSentence.length) {
+          setCharIndex((prev) => prev + 1);
+          setCurrentText(currentSentence.substring(0, charIndex + 1));
+        } else {
+          setIsTyping(false);
+        }
       } else {
-        setendValue((prev) => prev - 1);
+        if (charIndex > 0) {
+          setCharIndex((prev) => prev - 1);
+          setCurrentText(currentSentence.substring(0, charIndex - 1));
+        } else {
+          setIsTyping(true);
+          setTextIndex((prev) => (prev + 1) % texts.length);
+        }
       }
-      if (endValue > texts[index].length + 10) {
-        setIsForward(false);
-      }
-      if (endValue < 2.1) {
-        setIsForward(true);
-        setIndex((prev) => prev & texts.length);
-      }
-    }, 50);
+    }, 70);
 
-    return () => clearInterval(intervalId);
-  }, [endValue, isForward, index, texts]);
+    return () => clearTimeout(timeout);
+  }, [charIndex, isTyping, textIndex, texts]);
 
-  return <div className="transition ease duration-300">{currenText}</div>;
+  return (
+    <div className="transition ease duration-300">{currentText}</div>
+  );
 };
 
 export default TextChange;
