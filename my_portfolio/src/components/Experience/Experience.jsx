@@ -41,7 +41,7 @@ const Experience = () => {
               <h2 className="text-lg font-semibold leading-tight">Internship Trainee, Infosys SpringBoard Pragati</h2>
               <p className="text-sm text-gray-300">April 2025 - Present</p>
               <ul className="text-sm list-disc list-inside mt-2 text-gray-300">
-                <li>Worked as an internship trainee through Infosys Springboard.</li>
+                <li>Working as an internship trainee through Infosys Springboard.</li>
               </ul>
             </div>
           </div>
