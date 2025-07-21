@@ -5,6 +5,7 @@ import React from "react"
 import Experience from "./components/Experience/Experience"
 import Footer from "./components/Footer/footer"
 import Projects from "./components/Projects/Projects"
+import Certificates from "./components/Certificates/Certificates"
 
 function App() { 
   return (
@@ -14,6 +15,7 @@ function App() {
       <About />
       <Experience />
       <Projects />
+      <Certificates />
       <Footer />
     </div>
   )

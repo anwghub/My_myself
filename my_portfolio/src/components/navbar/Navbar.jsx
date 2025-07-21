@@ -14,13 +14,14 @@ const Navbar = () => {
 
   return (
     <nav className='relative z-50 flex justify-between items-center text-white px-6 py-4 md:px-20 bg-transparent mt-10'>
-      <span className='text-5xl font-bold tracking-wide'>Portfolio</span>
+      <span className='text-3xl md:text-4xl font-bold tracking-wide'>Portfolio</span>
 
       {/* Desktop Menu */}
       <ul className='hidden md:flex gap-8 font-semibold text-xl'>
         <a href="#About"><li className='hover:text-[#7da0fa] duration-200'>About</li></a>
         <a href="#Experience"><li className='hover:text-[#7da0fa] duration-200'>Experience</li></a>
         <a href="#Projects"><li className='hover:text-[#7da0fa] duration-200'>Projects</li></a>
+        <a href="#Certificates"><li className='hover:text-[#7da0fa] duration-200'>Certificates</li></a>
         <a href="#Footer"><li className='hover:text-[#7da0fa] duration-200'>Contact</li></a>
       </ul>
 
@@ -39,6 +40,7 @@ const Navbar = () => {
           <a href="#About" onClick={handleLinkClick}><li>About</li></a>
           <a href="#Experience" onClick={handleLinkClick}><li>Experience</li></a>
           <a href="#Projects" onClick={handleLinkClick}><li>Projects</li></a>
+          <a href="#Certicates" onClick={handleLinkClick}><li>Certificates</li></a>
           <a href="#Footer" onClick={handleLinkClick}><li>Contact</li></a>
         </ul>
       )}
