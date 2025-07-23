@@ -40,7 +40,7 @@ const Navbar = () => {
           <a href="#About" onClick={handleLinkClick}><li>About</li></a>
           <a href="#Experience" onClick={handleLinkClick}><li>Experience</li></a>
           <a href="#Projects" onClick={handleLinkClick}><li>Projects</li></a>
-          <a href="#Certicates" onClick={handleLinkClick}><li>Certificates</li></a>
+          <a href="#Certificates" onClick={handleLinkClick}><li>Certificates</li></a>
           <a href="#Footer" onClick={handleLinkClick}><li>Contact</li></a>
         </ul>
       )}
